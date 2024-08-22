@@ -2,7 +2,7 @@ import numpy as np
 
 from config.enums import DataStatus, ModalityType
 from config.image_datasets import ImageDatasetConfig
-from config.memory import NUM_PROCS
+from vlm_toolbox.config.general_setting import NUM_PROCS
 from config.modality import ModalityManager
 from data.data_access.dataset_handler import SingleModalDatasetHandler
 from data.data_access.dataset_modules import DatasetIOHandler, DatasetTransformer

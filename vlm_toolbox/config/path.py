@@ -1,23 +1,28 @@
 import os
 import sys
 
-ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-REPO_DIR = os.path.dirname(ROOT_DIR)
+# Set the SRC_DIR to the directory containing the 'vlm_toolbox' directory
+SRC_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REPO_DIR = os.path.dirname(SRC_DIR)
 
-sys.path.append(ROOT_DIR)
+# Add SRC_DIR to the system path
+sys.path.append(SRC_DIR)
 
-USER_HOME_DIR = os.path.expanduser('~')
-ANALYTICS_OUT_DIR = os.path.join(REPO_DIR, 'outputs')
-IO_DIR = os.path.join('/home/alireza/', 'io')
+# Define the new directory paths based on the updated structure
+IO_DIR = os.path.join(REPO_DIR, 'io')
 
-EXPERIMENTS_LOGGING_DIR = os.path.join(USER_HOME_DIR, 'vlm_log')
-EXPERIMENTS_ROOT_DIR = os.path.join(USER_HOME_DIR, 'io', 'experiments')
-EXPERIMENTS_MODEL_DIR = os.path.join(USER_HOME_DIR, 'io', 'model')
+# Experiment directories
+EXPERIMENTS_ROOT_DIR = os.path.join(IO_DIR, 'experiments')
+EXPERIMENTS_LOGGING_DIR = os.path.join(EXPERIMENTS_ROOT_DIR, 'logs')
+EXPERIMENTS_MODEL_DIR = os.path.join(EXPERIMENTS_ROOT_DIR, 'models')
+EXPERIMENTS_RESULTS_DIR = os.path.join(EXPERIMENTS_ROOT_DIR, 'results')
+EXPERIMENTS_VISUALIZATIONS_DIR = os.path.join(EXPERIMENTS_ROOT_DIR, 'visualizations')
 
-ANNOTATIONS_TEMPLATE_PATH = os.path.join(ROOT_DIR, 'annotations')
+# Models directory
+MODELS_DIR = os.path.join(IO_DIR, 'models')
 
-VISUALIZATIONS_ROOT_DIR = os.path.join(ANALYTICS_OUT_DIR, 'visualization')
-SETUPS_DIR = os.path.join(ANALYTICS_OUT_DIR, 'setups')
+# Annotations directory
+ANNOTATIONS_PATH = os.path.join(IO_DIR, 'annotations')
 
-IMAGE_EMBEDS_TEMPLATE_PATH = IO_DIR + '/{dataset_name}/embedding/{{backbone_name}}/{{source}}/{{split}}/'
-IMAGES_TEMPLATE_PATH = IO_DIR + '/{dataset_name}/image/{{split}}/'
+# Dataset directory
+DATASETS_DIR = os.path.join(IO_DIR, 'datasets')

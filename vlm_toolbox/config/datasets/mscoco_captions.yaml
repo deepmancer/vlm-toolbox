@@ -1,0 +1,34 @@
+name: "mscoco_captions"
+description: "MSCOCO Captions is a dataset of images with corresponding captions."
+source: "https://cocodataset.org/#captions-2015"
+license: "https://creativecommons.org/licenses/by/4.0/"
+
+annotations:
+  provider: "repository"
+  data_structure:
+    storage_type: "csv"
+    identifier_column: "imgid"
+    feature_column: "label"
+  default_prompt_template: "a photo of a {}."
+  prompt_templates:
+    - "a photo of a {}."
+    - "a photo of the {}."
+    - "a photo of my {}."
+    - "i love my {}!"
+    - "a photo of my dirty {}."
+    - "a photo of my clean {}."
+    - "a photo of my new {}."
+    - "a photo of my old {}."
+
+providers:
+  huggingface:
+    uri: "HuggingFaceM4/COCO"
+    data_type: "image"
+    splits:
+      - "train"
+      - "validation"
+    data_structure:
+      storage_type: "hf_dataset"
+      identifier_column: "imgid"
+      feature_column: "image"
+  

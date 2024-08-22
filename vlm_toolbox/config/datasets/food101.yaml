@@ -1,0 +1,26 @@
+name: "food101"
+description: "Food-101 is a dataset of 101,000 images of food in 101 classes, with 1,000 images per class."
+source: "https://data.vision.ee.ethz.ch/cvl/datasets_extra/food-101/"
+license: "https://creativecommons.org/licenses/by/4.0/"
+
+annotations:
+  provider: "repository"
+  data_structure:
+    storage_type: "csv"
+    identifier_column: "class_id"
+    feature_column: "label"
+  default_prompt_template: "a photo of {}, a type of food."
+  prompt_templates:
+    - "a photo of {}, a type of food."
+
+providers:
+  huggingface:
+    uri: "ethz/food101"
+    data_type: "image"
+    splits:
+      - "train"
+      - "validation"
+    data_structure:
+      storage_type: "hf_dataset"
+      identifier_column: "label"
+      feature_column: "image"

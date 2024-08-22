@@ -1,0 +1,81 @@
+vision_language:
+  clip:
+    vit_b_32:
+      providers:
+        huggingface:
+          uri: "openai/clip-vit-base-patch32"
+        open_ai:
+          uri: "ViT-B/32"
+      embedding_dim: 512
+      image_size: 224
+      description: "ViT-B/32 Vision Transformer model with 224x224 image size"
+    
+    vit_b_16:
+      providers:
+        huggingface:
+          uri: "openai/clip-vit-base-patch16"
+        open_ai:
+          uri: "ViT-B/16"
+      embedding_dim: 512
+      image_size: 224
+      description: "ViT-B/16 Vision Transformer model with 224x224 image size"
+    
+    vit_l_14:
+      providers:
+        huggingface:
+          uri: "openai/clip-vit-large-patch14"
+        open_ai:
+          uri: "ViT-L/14"
+      embedding_dim: 768
+      image_size: 224
+      description: "ViT-L/14 Vision Transformer model with 224x224 image size"
+    
+    vit_l_14_336px:
+      providers:
+        huggingface:
+          uri: "openai/clip-vit-large-patch14-336"
+        open_ai:
+          uri: "ViT-L/14-336px"
+      embedding_dim: 768
+      image_size: 336
+      description: "ViT-L/14 Vision Transformer model with 336x336 image size"
+    
+    resnet_50:
+      providers:
+        open_ai:
+          uri: "RN50"
+      embedding_dim: 1024
+      image_size: 224
+      description: "ResNet-50 model with 224x224 image size"
+    
+    resnet_101:
+      providers:
+        open_ai:
+          uri: "RN101"
+      embedding_dim: 512
+      image_size: 224
+      description: "ResNet-101 model with 224x224 image size"
+    
+    resnet_50x4:
+      providers:
+        open_ai:
+          uri: "RN50x4"
+      embedding_dim: 640
+      image_size: 224
+      description: "ResNet-50x4 model with 224x224 image size"
+    
+    resnet_50x16:
+      providers:
+        open_ai:
+          uri: "RN50x16"
+      embedding_dim: 1792
+      image_size: 224
+      description: "ResNet-50x16 model with 224x224 image size"
+    
+    resnet_50x64:
+      providers:
+        open_ai:
+          uri: "RN50x64"
+      embedding_dim: 2560
+      image_size: 224
+      description: "ResNet-50x64 model with 224x224 image size"

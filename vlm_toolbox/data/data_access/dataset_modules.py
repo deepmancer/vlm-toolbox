@@ -3,7 +3,7 @@ import pandas as pd
 import torch
 from datasets import Dataset, DatasetDict, load_dataset, load_from_disk
 
-from config.memory import NUM_PROCS
+from vlm_toolbox.config.general_setting import NUM_PROCS
 from util.path import mkdir_if_missing
 from util.torch_helper import group_operation
 

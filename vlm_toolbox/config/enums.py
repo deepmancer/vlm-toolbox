@@ -1,15 +1,5 @@
-from enum import Enum, EnumMeta
-
-
-class BaseEnumMeta(EnumMeta):
-    def __getattribute__(cls, name):
-        member = super().__getattribute__(name)
-        if isinstance(member, Enum):
-            return member.value
-        return member
-
-
-class BaseEnum(Enum, metaclass=BaseEnumMeta):
+from enum import Enum
+class BaseEnum(str, Enum):
     @classmethod
     def get(cls, name_str):
         try:
@@ -22,34 +12,35 @@ class BaseEnum(Enum, metaclass=BaseEnumMeta):
         return [member.value for member in cls]
 
 
-class ImageDatasets(BaseEnum):
+class Datasets(BaseEnum):
     IMAGENET_1K = 'imagenet1k'
     FOOD101 = 'food101'
+    CIFAR10 = 'cifar10'
     CIFAR100 = 'cifar100'
     STANFORD_CARS = 'stanford_cars'
     INATURALIST = 'inaturalist2021'
     MSCOCO_CAPTIONS = 'mscoco_captions'
 
-
-class ImageBackbones(BaseEnum):
-    DYNO_V2_GIANT = 'dyno_v2_giant'
-
-
-class TextBackbones(BaseEnum):
-    ALL_MPNET_BASE_V2 = 'all_mpnet_base_v2'
-    ALL_MINILM_L6_V2 = 'all_minilm_l6_v2'
-
-
 class CLIPBackbones(BaseEnum):
-    CLIP_VIT_B_32 = 'vit_b_32'
-    CLIP_VIT_B_16 = 'vit_b_16'
-    CLIP_VIT_L_14 = 'vit_l_14'
-    CLIP_RESNET_50 = 'resnet_50'
-    CLIP_RESNET_101 = 'resnet_101'
-    CLIP_RESNET_50_4 = 'resnet_50_4'
-    CLIP_RESNET_50_16 = 'resnet_50_16'
-    CLIP_RESNET_50_64 = 'resnet_50_64'
-    CLIP_VIT_L_14_336PX = 'vit_l_14_336px'
+    VIT_B_32 = 'clip_vit_b_32'
+    VIT_B_16 = 'clip_vit_b_16'
+    VIT_L_14 = 'clip_vit_l_14'
+    RESNET_50 = 'clip_resnet_50'
+    RESNET_101 = 'clip_resnet_101'
+    RESNET_50_4 = 'clip_resnet_50_4'
+    RESNET_50_16 = 'clip_resnet_50_16'
+    RESNET_50_64 = 'clip_resnet_50_64'
+    VIT_L_14_336PX = 'clip_vit_l_14_336px'
+
+class VisionLanguageBackbones(BaseEnum):
+    CLIP = 'clip'
+
+class VisionBackbones(BaseEnum):
+    DYNO_V2_GIANT = 'dyno_v2_giant'
+    
+class LanguageBackbones(BaseEnum):
+    ALL_MINILM_L6_V2 = 'all_minilm_l6_v2'
+    ALL_MPNET_BASE_V2 = 'all_mpnet_base_v2'
 
 
 class SamplingType(BaseEnum):
@@ -77,12 +68,20 @@ class SamplingStrategy(BaseEnum):
     ONE_SIDED_SELECTION = 'one_sided_selection'
     TOMEK_LINKS = 'tomek_links'
 
+class AnnotationsProviders(BaseEnum):
+    DATASET = 'dataset'
+    REPOSITORY = 'repository'
+    MANUAL = 'manual'
 
-class Backbones(BaseEnum):
+class DataTypes(BaseEnum):
     IMAGE = 'image'
     TEXT = 'text'
-    MULTIMODAL = 'multimodal'
+    EMBEDDING = 'embedding'
 
+class ModelBackboneTypes(BaseEnum):
+    VISION = 'vision'
+    LANGUAGE = 'language'
+    VISION_LANGUAGE = 'vision_language'
 
 class Trainers(BaseEnum):
     CLIP = 'clip'
@@ -93,15 +92,17 @@ class Stages(BaseEnum):
     EVAL = 'validation'
     PREPROCESS = 'preprocess'
 
-
-class Sources(BaseEnum):
-    OPEN_AI = 'open_ai'
+class ModelProviders(BaseEnum):
     HUGGINGFACE = 'huggingface'
-
-
-class LossWrappers(BaseEnum):
-    COARSELY_SUPERVISED_LOSS = 'coarsely_supervised'
-
+    OPEN_AI = 'open_ai'
+    TIMM = 'timm'
+    MANUAL = 'manual'
+    
+class DatasetProviders(BaseEnum):
+    HUGGINGFACE = 'huggingface'
+    TORCHVISION = 'torchvision'
+    KAGGLE = 'kaggle'
+    MANUAL = 'manual'
 
 class LossType(BaseEnum):
     CONTRASTIVE_LOSS = 'contrastive'
@@ -127,11 +128,15 @@ class Modalities(BaseEnum):
     M1 = 'm1'
     M2 = 'm2'
 
-
 class StorageType(BaseEnum):
-    DISK = 'disk'
-    IMAGE_FOLDER = 'imagefolder'
-    HUGGING_FACE = 'huggingface'
+    HF_DATASET = 'hf_dataset'
+    IMAGE_FOLDER = 'image_folder'
+    STATE_DICT = 'state_dict'
+    PARQUET = 'parquet'
+    PICKLE = 'pickle'
+    ARROW = 'arrow'
+    JSON = 'json'
+    CSV = 'csv'
 
 
 class Setups(BaseEnum):

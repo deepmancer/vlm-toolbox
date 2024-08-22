@@ -1,0 +1,39 @@
+name: "cifar10"
+description: "CIFAR-10 is a dataset of 60,000 32x32 color images in 10 classes, with 6,000 images per class."
+source: "https://www.cs.toronto.edu/~kriz/cifar.html"
+license: "https://creativecommons.org/publicdomain/zero/1.0/"
+
+annotations:
+  provider: "dataset"
+  default_prompt_template: "an image of a {}."
+  prompt_templates:
+    - "an image of a {}."
+    - "a close-up image of a {}."
+    - "a distant view of a {}."
+    - "a blurry image of a {}."
+    - "a high-quality image of a {}."
+    - "a low-resolution image of a {}."
+    - "an image of a small {}."
+    - "an image of a large {}."
+    - "an image showing the {}."
+    - "a colorful image of a {}."
+    - "a grayscale image of a {}."
+    - "an artistic image of a {}."
+    - "a cartoon-like image of a {}."
+    - "a realistic image of a {}."
+    - "an image capturing the {}."
+    - "a vibrant image of a {}."
+    - "a dark image of a {}."
+    - "a bright image of a {}."
+
+providers:
+  huggingface:
+    uri: "uoft-cs/cifar10"
+    data_type: "image"
+    splits:
+      - "train"
+      - "test"
+    data_structure:
+      storage_type: "hf_dataset"
+      identifier_column: "label"
+      feature_column: "img"

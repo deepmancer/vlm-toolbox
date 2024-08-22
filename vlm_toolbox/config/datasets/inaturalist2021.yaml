@@ -1,0 +1,45 @@
+name: "inaturalist2021"
+description: "iNaturalist 2021 is a dataset of images of various species in their natural habitats."
+source: "https://www.inaturalist.org/"
+license: "https://creativecommons.org/licenses/by-nc/4.0/"
+
+annotations:
+  provider: "repository"
+  data_structure:
+    storage_type: "csv"
+    identifier_column: "id"
+    feature_column: "name"
+  default_prompt_template: "a photo of a {}."
+  prompt_templates:
+    - "this is a close-up image of a {}."
+    - "a natural habitat scene with a {}."
+    - "a high-quality photograph showcasing a {}."
+    - "this is an outdoor shot of a {}."
+    - "captured in its natural environment, this is a {}."
+    - "a detailed view of a {}, found in the wild."
+    - "a snapshot featuring a {} in its habitat."
+    - "this image beautifully illustrates a {}."
+    - "an educational image presenting a {}."
+    - "the focus of this image is a {} in nature."
+    - "a naturalistic portrayal of a {}."
+    - "this picture captures the essence of a {}."
+    - "observing a {} in its natural surroundings."
+    - "a well-lit photo of a {}."
+    - "an image that clearly depicts a {}, native to its environment."
+    - "in the wild, this is a {}."
+    - "a photographic study of a {}."
+    - "nature’s beauty, encapsulated by a {}."
+    - "a wildlife photo of a {}."
+    - "spotlight on a {}, thriving in its ecosystem."
+
+providers:
+  huggingface:
+    uri: "inaturalist2021"
+    data_type: "image"
+    splits:
+      - "train"
+      - "validation"
+    data_structure:
+      storage_type: "hf_dataset"
+      identifier_column: "class_id"
+      feature_column: "image"

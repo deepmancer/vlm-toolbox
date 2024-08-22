@@ -1,0 +1,43 @@
+name: "cifar100"
+description: "CIFAR-100 is a dataset of 60,000 32x32 color images in 100 classes, with 600 images per class."
+source: "https://www.cs.toronto.edu/~kriz/cifar.html"
+license: "https://creativecommons.org/publicdomain/zero/1.0/"
+
+annotations:
+  provider: "repository"
+  data_structure:
+    storage_type: "csv"
+    identifier_column: "class_id"
+    feature_column: "label"
+  default_prompt_template: "a photo of a {}."
+  prompt_templates:
+    - "a photo of a {}."
+    - "a blurry photo of a {}."
+    - "a black and white photo of a {}."
+    - "a low contrast photo of a {}."
+    - "a high contrast photo of a {}."
+    - "a bad photo of a {}."
+    - "a good photo of a {}."
+    - "a photo of a small {}."
+    - "a photo of a big {}."
+    - "a photo of the {}."
+    - "a blurry photo of the {}."
+    - "a black and white photo of the {}."
+    - "a low contrast photo of the {}."
+    - "a high contrast photo of the {}."
+    - "a bad photo of the {}."
+    - "a good photo of the {}."
+    - "a photo of the small {}."
+    - "a photo of the big {}."
+
+providers:
+  huggingface:
+    uri: "uoft-cs/cifar100"
+    data_type: "image"
+    splits:
+      - "train"
+      - "test"
+    data_structure:
+      storage_type: "hf_dataset"
+      identifier_column: "fine_label"
+      feature_column: "img"
