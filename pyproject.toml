@@ -1,0 +1,45 @@
+[project]
+name = "vlm-toolbox"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "deepmancer", email = "alirezaheidari.cs@gmail.com"},
+    {name = "Alireza Heidari", email = "alirezaheidari.cs@gmail.com"},
+]
+dependencies = [
+    "aiohttp",
+    "torch==2.3.1",
+    "torchvision",
+    "tqdm",
+    "datasets",
+    "imbalanced-learn",
+    "ipykernel",
+    "jupyter",
+    "jupyterlab",
+    "kaggle",
+    "loguru",
+    "mypy-extensions",
+    "mypy",
+    "notebook",
+    "numpy",
+    "optuna",
+    "pandas",
+    "pyarrow",
+    "pydantic>=2",
+    "pyflakes",
+    "python-decouple",
+    "ruff",
+    "scikit-learn",
+    "scipy",
+    "seaborn",
+    "tensorboard",
+    "transformers",
+    "widgetsnbextension",
+]
+requires-python = ">=3.8"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
