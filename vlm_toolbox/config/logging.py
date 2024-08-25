@@ -41,4 +41,4 @@ def create_logger(**binding_params: dict) -> logging.Logger:
         return logger
     return logger.bind(**binding_params)
 
-__all__ = ["init_logging", "get_logger"]
+__all__ = ["init_logging", "create_logger"]
