@@ -1,14 +1,16 @@
 from enum import Enum
+from typing import List
+
 class BaseEnum(str, Enum):
     @classmethod
-    def get(cls, name_str):
+    def get(cls, name_str: str) -> str:
         try:
             return cls[name_str.upper()].value
         except KeyError:
             raise ValueError(f"{name_str} is not a valid name for {cls.__name__}")
 
     @classmethod
-    def get_values(cls):
+    def values(cls) -> List[str]:
         return [member.value for member in cls]
 
 
@@ -117,7 +119,6 @@ class DataStatus(BaseEnum):
     RAW = 'raw'
     PREPROCESSED = 'preprocessed'
     EMBEDDING = 'embedding'
-
 
 class ModalityType(BaseEnum):
     IMAGE = 'image'
