@@ -1,47 +1,47 @@
 cifar100:
   labels: labels/cifar100.csv
-  identifier_column: "class_id"
-  feature_column: "label"
+  id_column: "class_id"
+  label_column: "label"
   prompts:
     full: prompts/full/cifar100.json
     template: prompts/template/cifar100.yaml
 
 food101:
   labels: labels/food101.csv
-  identifier_column: "class_id"
-  feature_column: "label"
+  id_column: "class_id"
+  label_column: "label"
   prompts:
     full: prompts/full/food101.json
     template: prompts/template/food101.yaml
 
 imagenet1k:
   labels: labels/imagenet1k.csv
-  identifier_column: "class_id"
-  feature_column: "simplified"
+  id_column: "class_id"
+  label_column: "simplified"
   prompts:
     full: prompts/full/imagenet1k.json
     template: prompts/template/imagenet1k.yaml
 
 inaturalist2021:
   labels: labels/inaturalist2021.csv
-  identifier_column: "id"
-  feature_column: "name"
+  id_column: "id"
+  label_column: "name"
   prompts:
     full: prompts/full/inaturalist2021.json
     template: prompts/template/inaturalist2021.yaml
 
 mscoco_captions:
   labels: labels/mscoco_captions.csv
-  identifier_column: "imgid"
-  feature_column: "label"
+  id_column: "imgid"
+  label_column: "label"
   prompts:
     full: prompts/full/mscoco_captions.json
     template: prompts/template/mscoco_captions.yaml
 
 stanford_cars:
   labels: labels/stanford_cars.csv
-  identifier_column: "class_id"
-  feature_column: "label"
+  id_column: "class_id"
+  label_column: "label"
   prompts:
     full: prompts/full/stanford_cars.json
     template: prompts/template/stanford_cars.yaml
