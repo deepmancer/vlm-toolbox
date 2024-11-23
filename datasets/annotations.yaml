@@ -1,0 +1,95 @@
+cifar100:
+  labels: labels/cifar100.csv
+  id_column: "class_id"
+  label_column: "label"
+  prompts:
+    full: prompts/full/cifar100.json
+    template: prompts/template/cifar100.yaml
+
+food101:
+  labels: labels/food101.csv
+  id_column: "class_id"
+  label_column: "label"
+  prompts:
+    full: prompts/full/food101.json
+    template: prompts/template/food101.yaml
+
+imagenet1k:
+  labels: labels/imagenet1k.csv
+  id_column: "class_id"
+  label_column: "simplified"
+  prompts:
+    full: prompts/full/imagenet1k.json
+    template: prompts/template/imagenet1k.yaml
+
+inaturalist2021:
+  labels: labels/inaturalist2021.csv
+  id_column: "id"
+  label_column: "name"
+  prompts:
+    full: prompts/full/inaturalist2021.json
+    template: prompts/template/inaturalist2021.yaml
+
+mscoco_captions:
+  labels: labels/mscoco_captions.csv
+  id_column: "imgid"
+  label_column: "label"
+  prompts:
+    full: prompts/full/mscoco_captions.json
+    template: prompts/template/mscoco_captions.yaml
+
+stanford_cars:
+  labels: labels/stanford_cars.csv
+  id_column: "class_id"
+  label_column: "label"
+  prompts:
+    full: prompts/full/stanford_cars.json
+    template: prompts/template/stanford_cars.yaml
+
+airplane:
+  prompts:
+    full: prompts/full/airplane.json
+
+bird:
+  prompts:
+    full: prompts/full/bird.json
+
+cal:
+  prompts:
+    full: prompts/full/cal.json
+
+cifar10:
+  prompts:
+    full: prompts/full/cifar10.json
+
+EuroSAT:
+  prompts:
+    full: prompts/full/EuroSAT.json
+
+flower:
+  prompts:
+    full: prompts/full/flower.json
+
+kinetics:
+  prompts:
+    full: prompts/full/kinetics.json
+
+pets:
+  prompts:
+    full: prompts/full/pets.json
+
+res45:
+  prompts:
+    full: prompts/full/res45.json
+
+sun:
+  prompts:
+    full: prompts/full/sun.json
+
+texture:
+  prompts:
+    full: prompts/full/texture.json
+
+ucf:
+  prompts:
+    full: prompts/full/ucf.json
