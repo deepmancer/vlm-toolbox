@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/vlm-toolbox-logo.png" alt="VLM Toolbox Logo" width="20%">
+  <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/vlm-toolbox-logo.png" alt="VLM Toolbox Logo" width="20%">
 </p>
 
 <p align="center">
