@@ -1,4 +1,0 @@
-default: "a photo of {}, a type of food."
-extra:
-  - "a photo of {}, a type of food."
-  - "a close-up photo of {}, a type of food."
