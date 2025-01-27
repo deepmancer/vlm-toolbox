@@ -1,0 +1,101 @@
+class_id,coarse_id,label,coarse_label
+0,4,apple,fruit and vegetables
+1,1,aquarium fish,fish
+2,14,baby,people
+3,8,bear,large carnivores
+4,0,beaver,aquatic mammals
+5,6,bed,household furniture
+6,7,bee,insects
+7,7,beetle,insects
+8,18,bicycle,vehicles 1
+9,3,bottle,food containers
+10,3,bowl,food containers
+11,14,boy,people
+12,9,bridge,large man-made outdoor things
+13,18,bus,vehicles 1
+14,7,butterfly,insects
+15,11,camel,large omnivores and herbivores
+16,3,can,food containers
+17,9,castle,large man-made outdoor things
+18,7,caterpillar,insects
+19,11,cattle,large omnivores and herbivores
+20,6,chair,household furniture
+21,11,chimpanzee,large omnivores and herbivores
+22,5,clock,household electrical devices
+23,10,cloud,large natural outdoor scenes
+24,7,cockroach,insects
+25,6,couch,household furniture
+26,13,cra,non-insect invertebrates
+27,15,crocodile,reptiles
+28,3,cup,food containers
+29,15,dinosaur,reptiles
+30,0,dolphin,aquatic mammals
+31,11,elephant,large omnivores and herbivores
+32,1,flatfish,fish
+33,10,forest,large natural outdoor scenes
+34,12,fox,medium mammals
+35,14,girl,people
+36,16,hamster,small mammals
+37,9,house,large man-made outdoor things
+38,11,kangaroo,large omnivores and herbivores
+39,5,keyboard,household electrical devices
+40,5,lamp,household electrical devices
+41,19,lawn mower,vehicles 2
+42,8,leopard,large carnivores
+43,8,lion,large carnivores
+44,15,lizard,reptiles
+45,13,lobster,non-insect invertebrates
+46,14,man,people
+47,17,maple tree,trees
+48,18,motorcycle,vehicles 1
+49,10,mountain,large natural outdoor scenes
+50,16,mouse,small mammals
+51,4,mushroom,fruit and vegetables
+52,17,oak tree,trees
+53,4,orange,fruit and vegetables
+54,2,orchid,flowers
+55,0,otter,aquatic mammals
+56,17,palm tree,trees
+57,4,pear,fruit and vegetables
+58,18,pickup truck,vehicles 1
+59,17,pine tree,trees
+60,10,plain,large natural outdoor scenes
+61,3,plate,food containers
+62,2,poppy,flowers
+63,12,porcupine,medium mammals
+64,12,possum,medium mammals
+65,16,rabbit,small mammals
+66,12,raccoon,medium mammals
+67,1,ray,fish
+68,9,road,large man-made outdoor things
+69,19,rocket,vehicles 2
+70,2,rose,flowers
+71,10,sea,large natural outdoor scenes
+72,0,seal,aquatic mammals
+73,1,shark,fish
+74,16,shrew,small mammals
+75,12,skunk,medium mammals
+76,9,skyscraper,large man-made outdoor things
+77,13,snail,non-insect invertebrates
+78,15,snake,reptiles
+79,13,spider,non-insect invertebrates
+80,16,squirrel,small mammals
+81,19,streetcar,vehicles 2
+82,2,sunflower,flowers
+83,4,sweet pepper,fruit and vegetables
+84,6,table,household furniture
+85,19,tank,vehicles 2
+86,5,telephone,household electrical devices
+87,5,television,household electrical devices
+88,8,tiger,large carnivores
+89,19,tractor,vehicles 2
+90,18,train,vehicles 1
+91,1,trout,fish
+92,2,tulip,flowers
+93,15,turtle,reptiles
+94,6,wardrobe,household furniture
+95,0,whale,aquatic mammals
+96,17,willow tree,trees
+97,8,wolf,large carnivores
+98,14,woman,people
+99,13,worm,non-insect invertebrates
