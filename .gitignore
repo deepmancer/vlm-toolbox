@@ -171,5 +171,4 @@ visualization/*
 *.pkl
 
 # Workspace settings
-src.code-workspace
-vlm-toolbox.code-workspace
+*.code-workspace
