@@ -1,5 +1,6 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/vision-language-models-toolbox-logo.png" alt="VLM Toolbox Logo" width="80%">
+  <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/vision-language-models-toolbox-logo.png" 
+       alt="VLM Toolbox Logo" width="80%">
 </p>
 
 <p align="center">
@@ -8,20 +9,14 @@
   <img src="https://img.shields.io/badge/Jupyter-F37626.svg?&style=for-the-badge&logo=Jupyter&logoColor=white" alt="Jupyter Notebook Badge">
   <img src="https://img.shields.io/badge/License-BSD_3--Clause-blue.svg?style=for-the-badge" alt="BSD 3-Clause License">
 </p>
+
 <p align="center">
-  <em>A deep-learning toolbox for training, fine-tuning, evaluating, and analyzing large vision-language models.</em>
+  <em>A PyTorch-powered library for accelerating multimodal AI research with Vision-Language Models</em>
 </p>
 
 # Vision-Language Models Toolbox
 
-The **Vision-Language Models Toolbox** is an **all-in-one, flexible** Python library built to **streamline research and development** in multimodal (vision-and-language) learning. Whether you're exploring **soft-prompt finetuning** (e.g., CoOp or CoCoOp) or pushing the boundaries with **large-scale Vision-Language (VL) models** (such as CLIP), this toolbox offers everyth ing you need:
-
-- **📊 Unified** data handling for image, text, and multimodal tasks.  
-- **⚙️ Straightforward** model configuration with multiple backbones from OpenAI, Hugging Face, and beyond.  
-- **🔄 Extensive** sampling strategies, data **🖼️ augmentation**, and in-depth **📈 evaluation metrics**.  
-- **📋 Seamless** logging & visualization with TensorBoard.  
-- **🔧 Easy pathways** for integrating **🆕 new models** or **📂 custom datasets** with minimal setup.  
-- **🚀 GPU-optimized** training, support for **🔢 half-precision**, sharding, and more.
+A flexible, all-in-one PyTorch library that streamlines research and development with state-of-the-art vision-language models. Whether you’re experimenting with soft-prompt tuning (e.g., CoOp, CoCoOp) or large-scale models such as CLIP, this toolbox provides a robust foundation built on PyTorch and Hugging Face Transformers.
 
 ---
 
@@ -35,10 +30,11 @@ The **Vision-Language Models Toolbox** is an **all-in-one, flexible** Python lib
   - [Usage](#usage)
   - [Adding New Models](#adding-new-models)
   - [Adding a New Dataset](#adding-a-new-dataset)
-  - [Notebooks](#notebooks)
+  - [Jupyter Notebooks](#jupyter-notebooks)
   - [Installation](#installation)
-    - [1. Conda Environment](#1-conda-environment)
-    - [2. Install Dependencies](#2-install-dependencies)
+    - [1. (Optional) Create a Conda Environment](#1-optional-create-a-conda-environment)
+    - [2. Install From the Source](#2-install-from-the-source)
+    - [Acknowledgments](#acknowledgments)
   - [Contributing](#contributing)
   - [License](#license)
 
@@ -46,35 +42,39 @@ The **Vision-Language Models Toolbox** is an **all-in-one, flexible** Python lib
 
 ## Key Features
 
-- **Dataset Handling**: Integrate and preprocess well-known datasets (ImageNet, Food101, Stanford Cars, iNaturalist 2021, MSCOCO Captions, etc.) for both single- and multi-modal tasks.
-- **Soft-Prompt Tuning**: Easily leverage CoOp or CoCoOp to adapt large VL models for your specific domain.
-- **Advanced Sampling Strategies**: Combat data imbalance with SMOTE, oversampling, undersampling, and more.
-- **Data Augmentation**: Effortlessly activate or deactivate standard image/text augmentations to improve model robustness.
-- **Metrics & Evaluation**: Track accuracy, top-k, balanced accuracy, F1, AUC, and many other metrics. Compare performance across multiple runs.
-- **Logging & Visualization**: Use TensorBoard to monitor model performance, visualize learning curves, and streamline debugging.
+| **Feature**                 | **Description**                                                                                                                                          |
+|-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Multimodal Datasets**     | Supports **ImageNet1k, CIFAR-100, Stanford Cars, iNaturalist 2021, MSCOCO Captions**, and more.                                                         |
+| **Model Flexibility**       | Works with **CLIP (ViT & ResNet), DINO-V2, MiniLM, MPNet**, and also allows adding custom models.                                                        |
+| **Custom Objectives/Tasks** | Quickly add new tasks or losses with minimal code changes for all combined vision-language flows.                                                       |
+| **Prompt Tuning**           | Supports **soft prompts (CoOp, CoCoOp) and predefined hard prompts** for dataset adaptation.                                                             |
+| **Scalability & Precision** | Supports **multi-GPU, mixed precision (FP16, BF16, FP32, FP64), sharding, and DeepSpeed**.                                                               |
+| **Sampling Strategies**     | Includes **oversampling, undersampling, and hybrid methods** like **SMOTE, ADASYN, and Tomek Links**.                                                   |
+| **Data Augmentation**       | Provides **image and text augmentations** for model training.                                                                                           |
+| **Evaluation Metrics**      | Tracks **accuracy, precision, recall, F1-score, AUC-ROC, and more**.                                                                                    |
+| **Logging & Visualization** | Supports **TensorBoard & Loguru** for monitoring and debugging.                                                                                          |
+| **Flexible API**            | **Pre-built modules & functionalities** for datasets, models, tasks, setups, and more.                                                                  |
 
 ---
-
 
 ## Supported Models
 
-| Model Structure       | Provider                                                                                  | Modality   |
-|-----------------------|-------------------------------------------------------------------------------------------|------------|
-| **CLIP-ViT-B/32**     | [OpenAI](https://openai.com/research/clip)<br>[HuggingFace](https://huggingface.co/openai/clip-vit-base-patch32) | Multimodal |
-| **CLIP-ViT-B/16**     | [OpenAI](https://openai.com/research/clip)<br>[HuggingFace](https://huggingface.co/openai/clip-vit-base-patch16) | Multimodal |
-| **CLIP-ViT-L/14**     | [OpenAI](https://openai.com/research/clip)<br>[HuggingFace](https://huggingface.co/openai/clip-vit-large-patch14) | Multimodal |
-| **CLIP-ViT-L/14-336** | [OpenAI](https://openai.com/research/clip)<br>[HuggingFace](https://huggingface.co/openai/clip-vit-large-patch14-336) | Multimodal |
-| **CLIP-RN50**         | [OpenAI](https://openai.com/research/clip)                                                                 | Multimodal |
-| **CLIP-RN101**        | [OpenAI](https://openai.com/research/clip)                                                                 | Multimodal |
-| **CLIP-RN50x4**       | [OpenAI](https://openai.com/research/clip)                                                                 | Multimodal |
-| **CLIP-RN50x16**      | [OpenAI](https://openai.com/research/clip)                                                                 | Multimodal |
-| **CLIP-RN50x64**      | [OpenAI](https://openai.com/research/clip)                                                                 | Multimodal |
-| **DYNO-V2-GIANT**     | [HuggingFace](https://huggingface.co/facebook/dinov2-giant)                                                | Image      |
-| **ALL-MiniLM-L6-v2**  | [HuggingFace](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)                               | Text       |
-| **ALL-MPNET-BASE-V2** | [HuggingFace](https://huggingface.co/sentence-transformers/all-mpnet-base-v2)                              | Text       |
+| Backbone           | Supported Provider(s)                                                                                                  | Modality   |
+|--------------------|------------------------------------------------------------------------------------------------------------------------|------------|
+| **CLIP-ViT-B/32**  | [OpenAI](https://openai.com/research/clip)<br>[Hugging Face](https://huggingface.co/openai/clip-vit-base-patch32)       | Multimodal |
+| **CLIP-ViT-B/16**  | [OpenAI](https://openai.com/research/clip)<br>[Hugging Face](https://huggingface.co/openai/clip-vit-base-patch16)       | Multimodal |
+| **CLIP-ViT-L/14**  | [OpenAI](https://openai.com/research/clip)<br>[Hugging Face](https://huggingface.co/openai/clip-vit-large-patch14)       | Multimodal |
+| **CLIP-ViT-L/14-336** | [OpenAI](https://openai.com/research/clip)<br>[Hugging Face](https://huggingface.co/openai/clip-vit-large-patch14-336) | Multimodal |
+| **CLIP-RN50**      | [OpenAI](https://openai.com/research/clip)                                                                             | Multimodal |
+| **CLIP-RN101**     | [OpenAI](https://openai.com/research/clip)                                                                             | Multimodal |
+| **CLIP-RN50x4**    | [OpenAI](https://openai.com/research/clip)                                                                             | Multimodal |
+| **CLIP-RN50x16**   | [OpenAI](https://openai.com/research/clip)                                                                             | Multimodal |
+| **CLIP-RN50x64**   | [OpenAI](https://openai.com/research/clip)                                                                             | Multimodal |
+| **DINO-V2-GIANT**  | [Hugging Face](https://huggingface.co/facebook/dinov2-giant)                                                            | Image      |
+| **ALL-MiniLM-L6-v2**  | [Hugging Face](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)                                          | Text       |
+| **ALL-MPNET-BASE-V2** | [Hugging Face](https://huggingface.co/sentence-transformers/all-mpnet-base-v2)                                         | Text       |
 
 ---
-
 
 ## Quick Start
 
@@ -131,7 +131,6 @@ setup = Setup(
     train_batch_size=64,
     eval_batch_size=256,
     precision_dtype='fp16',
-    source=Sources.HUGGINGFACE,
     main_metric_name=Metrics.ACCURACY,
     random_state=42,
     device_type='cuda'
@@ -152,19 +151,20 @@ pipeline.tear_down()
 flush()
 ```
 
-> **Note**: The toolbox treats multiple data inputs as modalities: `m1` and `m2`. This modular design makes it easy to extend to text, image, video, or other data streams.
+> **Note**: The toolbox treats multiple data inputs as modalities: `m1` and `m2`. This modular design makes it easy to extend support for text, image, video, or other data streams.
 
 ---
 
 ## Adding New Models
 
-One key strength of this repository is **extensibility**. Integrating your own model is straightforward:
+One key strength of this repository is its **extensibility**. Integrating your own model is straightforward:
 
 1. **Add Your Model to an Enum**  
-   Extend `ImageBackbones` or `CLIPBackbones` in [`enums.py`](vlm_toolbox/config/enums.py):
+   Extend `ImageBackbones` or `CLIPBackbones` in 
+   [`enums.py`](vlm_toolbox/config/enums.py):
    ```python
    class ImageBackbones(BaseEnum):
-       DYNO_V2_GIANT = 'dyno_v2_giant'
+       DINO_V2_GIANT = 'dino_v2_giant'
        NEW_IMAGE_MODEL = 'new_image_model'
    ```
 
@@ -183,7 +183,7 @@ One key strength of this repository is **extensibility**. Integrating your own m
    ```
 
 3. **Train & Evaluate**  
-   Reference your model from the command line or from your Python code. Your model is now part of the VL Models Toolbox!
+   Reference your new model from the command line or from your Python code. Your model is now part of the VL Models Toolbox!
 
 ---
 
@@ -222,89 +222,109 @@ Similar to adding new models, you can integrate additional datasets seamlessly:
    ```
 
 3. **Validate Paths**  
-   If using a local folder, ensure `StorageType.IMAGE_FOLDER` or `StorageType.DISK` is set, and the path exists.
+   If using a local folder, ensure `StorageType.IMAGE_FOLDER` or `StorageType.DISK` is set, and that the path exists.
 
 4. **Reference the Dataset**  
-   Use `my_new_dataset` in your script or code. That’s it—your dataset is now recognized and processed like any other in the toolbox!
+   Use `my_new_dataset` in your script or code, and you're all set. The dataset is now recognized and processed just like any other!
 
 ---
 
-## Notebooks
+## Jupyter Notebooks
 
 For deeper experimentation and visualization, explore our **Jupyter notebooks** in the [`notebooks`](notebooks) directory:
 
 - **[Zero-Shot Image Classification with CLIP](notebooks/evaluate/zero_shot.ipynb)**  
-  Example usage and evaluation for zero-shot scenarios.
+  Demonstrates example usage and evaluation for zero-shot scenarios.
 
   <p align="center">
-      <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/top5-preds-prob.png" alt="Top 5 Predictions Probability" width="80%">
+    <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/top5-preds-prob.png" 
+         alt="Top 5 Predictions Probability" width="80%">
   </p>
-
   <p align="center">
-      <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/zero-shot-od.png" alt="Zero-shot Object Detection Model Output" width="80%">
+    <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/zero-shot-od.png" 
+         alt="Zero-shot Object Detection Model Output" width="80%">
   </p>
 
 - **[Embedding Distribution Visualization](notebooks/analytics/embedding_distribution.ipynb)**  
   Compare embeddings via t-SNE, PCA, and more.
 
   <p align="center">
-      <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/tsne-all-classes.jpg" alt="VLM Image & Text Embeddings Visualization" width="80%">
+    <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/tsne-all-classes.jpg" 
+         alt="VLM Image & Text Embeddings Visualization" width="80%">
   </p>
   <p align="center">
-      <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/tsne-top-preds.png" alt="Top-k Predictions Image Embedding Visualization" width="80%">
+    <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/tsne-top-preds.png" 
+         alt="Top-k Predictions Image Embedding Visualization" width="80%">
   </p>
 
 - **[Multi-Granular Performance on ImageNet](notebooks/analytics/multi_granular_performance.ipynb)**  
   Assess model accuracy at different class hierarchical levels.
 
   <p align="center">
-      <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/tree-hierarchy-eval.png" alt="Top-k Predictions Visualization on Label Hierarchy" width="80%">
+    <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/tree-hierarchy-eval.png" 
+         alt="Top-k Predictions Visualization on Label Hierarchy" width="80%">
   </p>
 
 - **[Misclassification Error Analysis](notebooks/analytics/sample_analysis.ipynb)**  
-  Gain insights into model misclassifications.
+  Gain insights into where and why the model misclassifies.
 
   <p align="center">
-      <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/gt-heatmap.png" width="80%">
+    <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/gt-heatmap.png" 
+         alt="Ground Truth Heatmap" width="80%">
   </p>
-
   <p align="center">
-      <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/top1-heatmap.png" width="80%">
+    <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/top1-heatmap.png" 
+         alt="Top-1 Prediction Heatmap" width="80%">
   </p>
-
   <p align="center">
-      <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/top5-heatmap.png" width="80%">
+    <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/top5-heatmap.png" 
+         alt="Top-5 Predictions Heatmap" width="80%">
   </p>
 
 ---
 
 ## Installation
 
-### 1. Conda Environment
+### 1. (Optional) Create a Conda Environment
 
 ```bash
-conda create -n vlm-toolbox python=3.9
-conda activate vlm-toolbox
+conda create -n vlm python=3.9
+conda activate vlm
 ```
 
-### 2. Install Dependencies
+### 2. Install From the Source
 
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/deepmancer/vlm-toolbox.git
+cd vlm-toolbox
+pip install -e .
 ```
 
-For detailed instructions (e.g., installing separate packages individually), see [SETUP.md](SETUP.md).
+For more detailed instructions (e.g., installing separate packages individually), see [SETUP.md](SETUP.md).
+
+---
+
+### Acknowledgments
+
+This project benefits from the work of several open-source repositories. We acknowledge and appreciate their contributions to the research community:
+
+- **[OpenAI CLIP](https://github.com/openai/CLIP)**
+- **[CoOp](https://github.com/KaiyangZhou/CoOp)**
+- **[ProText](https://github.com/muzairkhattak/ProText)**
+- **[CuPL](https://github.com/sarahpratt/CuPL)**
 
 ---
 
 ## Contributing
 
-Contributions, suggestions, and new ideas are **highly appreciated**!  
-- **Submit Issues & PRs**: If you find bugs or have feature requests, open an [issue](https://github.com/yourusername/vlm-toolbox/issues) or a pull request.  
-- **Spread the Word**: Star the repo and share your exciting results to help grow the community.  
+Contributions, suggestions, and new ideas are **highly appreciated**!
 
-For direct inquiries, feel free to reach out:  
-**Email**: alirezaheidari dot cs at gmail dot com
+- **Submit Issues & PRs**: If you find bugs or have feature requests, open an [issue](https://github.com/yourusername/vlm-toolbox/issues) or a pull request.  
+- **Spread the Word**: Star the repo and share your results to help grow the community.
+
+For direct inquiries, feel free to reach out via email:
+
+**alirezaheidari dot cs at gmail dot com**
 
 ---
 
