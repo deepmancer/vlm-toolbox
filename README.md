@@ -237,11 +237,11 @@ For deeper experimentation and visualization, explore our **Jupyter notebooks** 
 
   <p align="center">
     <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/top5-preds-prob.png" 
-         alt="Top 5 Predictions Probability" width="80%">
+         alt="Top 5 Predictions Probability" width="50%">
   </p>
   <p align="center">
     <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/zero-shot-od.png" 
-         alt="Zero-shot Object Detection Model Output" width="80%">
+         alt="Zero-shot Object Detection Model Output" width="50%">
   </p>
 
 - **[Embedding Distribution Visualization](notebooks/analytics/embedding_distribution.ipynb)**  
@@ -249,11 +249,11 @@ For deeper experimentation and visualization, explore our **Jupyter notebooks** 
 
   <p align="center">
     <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/tsne-all-classes.jpg" 
-         alt="VLM Image & Text Embeddings Visualization" width="80%">
+         alt="VLM Image & Text Embeddings Visualization" width="50%">
   </p>
   <p align="center">
     <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/tsne-top-preds.png" 
-         alt="Top-k Predictions Image Embedding Visualization" width="80%">
+         alt="Top-k Predictions Image Embedding Visualization" width="50%">
   </p>
 
 - **[Multi-Granular Performance on ImageNet](notebooks/analytics/multi_granular_performance.ipynb)**  
@@ -261,7 +261,7 @@ For deeper experimentation and visualization, explore our **Jupyter notebooks** 
 
   <p align="center">
     <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/tree-hierarchy-eval.png" 
-         alt="Top-k Predictions Visualization on Label Hierarchy" width="80%">
+         alt="Top-k Predictions Visualization on Label Hierarchy" width="50%">
   </p>
 
 - **[Misclassification Error Analysis](notebooks/analytics/sample_analysis.ipynb)**  
@@ -269,15 +269,15 @@ For deeper experimentation and visualization, explore our **Jupyter notebooks** 
 
   <p align="center">
     <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/gt-heatmap.png" 
-         alt="Ground Truth Heatmap" width="80%">
+         alt="Ground Truth Heatmap" width="50%">
   </p>
   <p align="center">
     <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/top1-heatmap.png" 
-         alt="Top-1 Prediction Heatmap" width="80%">
+         alt="Top-1 Prediction Heatmap" width="50%">
   </p>
   <p align="center">
     <img src="https://raw.githubusercontent.com/deepmancer/vlm-toolbox/main/assets/figures/top5-heatmap.png" 
-         alt="Top-5 Predictions Heatmap" width="80%">
+         alt="Top-5 Predictions Heatmap" width="50%">
   </p>
 
 ---
