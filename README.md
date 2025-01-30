@@ -28,13 +28,12 @@ A flexible, all-in-one PyTorch library that streamlines research and development
   - [Supported Models](#supported-models)
   - [Quick Start](#quick-start)
   - [Usage](#usage)
-  - [Adding New Models](#adding-new-models)
-  - [Adding a New Dataset](#adding-a-new-dataset)
+    - [Running Experiments](#running-experiments)
+    - [Adding New Models](#adding-new-models)
+    - [Adding a New Dataset](#adding-a-new-dataset)
   - [Jupyter Notebooks](#jupyter-notebooks)
   - [Installation](#installation)
-    - [1. (Optional) Create a Conda Environment](#1-optional-create-a-conda-environment)
-    - [2. Install From the Source](#2-install-from-the-source)
-    - [Acknowledgments](#acknowledgments)
+  - [Acknowledgments](#acknowledgments)
   - [Contributing](#contributing)
   - [License](#license)
 
@@ -105,6 +104,8 @@ This command uses a ViT-B/32 CLIP model from Hugging Face, automatically logs pr
 
 ## Usage
 
+### Running Experiments
+
 You can also import this toolbox as a library for more advanced or **custom** experimentation. Here’s a minimal code example illustrating how to set up a multimodal pipeline:
 
 ```python
@@ -155,7 +156,7 @@ flush()
 
 ---
 
-## Adding New Models
+### Adding New Models
 
 One key strength of this repository is its **extensibility**. Integrating your own model is straightforward:
 
@@ -187,7 +188,7 @@ One key strength of this repository is its **extensibility**. Integrating your o
 
 ---
 
-## Adding a New Dataset
+### Adding a New Dataset
 
 Similar to adding new models, you can integrate additional datasets seamlessly:
 
@@ -285,14 +286,14 @@ For deeper experimentation and visualization, explore our **Jupyter notebooks** 
 
 ## Installation
 
-### 1. (Optional) Create a Conda Environment
+**1. (Optional) Create a Conda Environment**
 
 ```bash
 conda create -n vlm python=3.9
 conda activate vlm
 ```
 
-### 2. Install From the Source
+**2. Install From the Source**
 
 ```bash
 git clone https://github.com/deepmancer/vlm-toolbox.git
@@ -304,7 +305,7 @@ For more detailed instructions (e.g., installing separate packages individually)
 
 ---
 
-### Acknowledgments
+## Acknowledgments
 
 This project benefits from the work of several open-source repositories. We acknowledge and appreciate their contributions to the research community:
 
