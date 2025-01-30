@@ -81,7 +81,7 @@ The **Vision-Language Models Toolbox** is an **all-in-one, flexible** Python lib
 **Fine-tuning a CLIP model on ImageNet** is as simple as:
 
 ```bash
-python src/scripts/train.py \
+python vlm_toolbox/scripts/train.py \
     --dataset_name imagenet1k \
     --backbone_name vit_b_32 \
     --trainer_name clip \
@@ -161,7 +161,7 @@ flush()
 One key strength of this repository is **extensibility**. Integrating your own model is straightforward:
 
 1. **Add Your Model to an Enum**  
-   Extend `ImageBackbones` or `CLIPBackbones` in [`enums.py`](src/config/enums.py):
+   Extend `ImageBackbones` or `CLIPBackbones` in [`enums.py`](vlm_toolbox/config/enums.py):
    ```python
    class ImageBackbones(BaseEnum):
        DYNO_V2_GIANT = 'dyno_v2_giant'
@@ -169,7 +169,7 @@ One key strength of this repository is **extensibility**. Integrating your own m
    ```
 
 2. **Specify the Model URL**  
-   Update [`backbones.py`](src/config/backbones.py):
+   Update [`backbones.py`](vlm_toolbox/config/backbones.py):
    ```python
    class BackboneURLConfig(BaseConfig):
        config = {
@@ -192,7 +192,7 @@ One key strength of this repository is **extensibility**. Integrating your own m
 Similar to adding new models, you can integrate additional datasets seamlessly:
 
 1. **Extend the `ImageDatasets` Enum**  
-   In [`enums.py`](src/config/enums.py), add:
+   In [`enums.py`](vlm_toolbox/config/enums.py), add:
    ```python
    class ImageDatasets(BaseEnum):
        IMAGENET_1K = 'imagenet1k'
@@ -202,7 +202,7 @@ Similar to adding new models, you can integrate additional datasets seamlessly:
    ```
 
 2. **Add Configuration**  
-   In [`image_datasets.py`](src/config/image_datasets.py), define:
+   In [`image_datasets.py`](vlm_toolbox/config/image_datasets.py), define:
    ```python
    ImageDatasetConfig.config = {
        ...
@@ -293,7 +293,7 @@ conda activate vlm-toolbox
 pip install -r requirements.txt
 ```
 
-For detailed instructions (e.g., installing separate packages individually), see [ENV_SETUP.md](ENV_SETUP.md).
+For detailed instructions (e.g., installing separate packages individually), see [SETUP.md](SETUP.md).
 
 ---
 
