@@ -22,20 +22,18 @@ A flexible, all-in-one PyTorch library that streamlines research and development
 
 ## Table of Contents
 
-- [Vision-Language Models Toolbox](#vision-language-models-toolbox)
-  - [Table of Contents](#table-of-contents)
-  - [Key Features](#key-features)
-  - [Supported Models](#supported-models)
-  - [Quick Start](#quick-start)
-  - [Usage](#usage)
-    - [Running Experiments](#running-experiments)
-    - [Adding New Models](#adding-new-models)
-    - [Adding a New Dataset](#adding-a-new-dataset)
-  - [Jupyter Notebooks](#jupyter-notebooks)
-  - [Installation](#installation)
-  - [Acknowledgments](#acknowledgments)
-  - [Contributing](#contributing)
-  - [License](#license)
+- [Key Features](#key-features)
+- [Supported Models](#supported-models)
+- [Quick Start](#quick-start)
+- [Usage](#usage)
+  - [Running Experiments](#running-experiments)
+  - [Adding New Models](#adding-new-models)
+  - [Adding a New Dataset](#adding-a-new-dataset)
+- [Jupyter Notebooks](#jupyter-notebooks)
+- [Installation](#installation)
+- [Acknowledgments](#acknowledgments)
+- [Contributing](#contributing)
+- [License](#license)
 
 ---
 
