@@ -10,7 +10,7 @@ sys.path.insert(0, src_path)
 
 import pytest
 
-from src.data.data_access.label_handler import LabelHandler
+from vlm_toolbox.data.data_access.label_handler import LabelHandler
 
 
 pytest_plugins = [
