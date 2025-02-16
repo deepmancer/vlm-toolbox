@@ -331,9 +331,3 @@ For direct inquiries, feel free to reach out via email:
 
 This project is under the [BSD 3-Clause License](LICENSE).  
 Use it freely, modify it, and share your improvements under the same terms.
-
----
-
-> **Loved This Toolbox?**  
-> Give us a ⭐ on GitHub to support the project and help more researchers discover it!  
-> **Happy Coding!**
